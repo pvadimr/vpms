@@ -29,8 +29,11 @@ $cat=$_GET['cat'];
 $login=$_POST['login'];
 $type=$_POST['type'];
 $text=$_POST['text'];
-print '<html><head><meta http-equiv="Content-Type" content="text/html; charset='.$lang_encoding.'">
-<title>'.$lang_title.'</title>';
+print "<!DOCTYPE html>";
+print "<html>\n";
+print "<head>\n";
+print "<meta charset=\"".$lang_encoding."\">\n";
+print '<title>'.$lang_title.'</title>';
 if (isset($_REQUEST['log_out']) or !isset($_SESSION['aa']))$_SESSION['aa']=0;
 if ($_SESSION['aa']==0){
 if ($hide!='' and $pass==$password_admin and $login==$login_admin){$_SESSION['aa']=1; $hide=null;}
@@ -102,7 +105,6 @@ $content.= file_get_contents('./lang/'.$lang_help);
 
 }
 ?>
-<!DOCTYPE html>
 <link rel="stylesheet" href="./css.css" type="text/css" media="screen" />
 <script src="js/tinymce/tinymce.min.js"></script>
 <script>tinymce.init({
