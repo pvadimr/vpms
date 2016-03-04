@@ -1,0 +1,4 @@
+<h3><strong>This is a sample template</strong></h3>
+<p><strong>Hello, $name$!</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>$message$</strong></p>
