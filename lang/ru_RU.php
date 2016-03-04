@@ -40,9 +40,9 @@
 	$lang_to_send = "Всего получателей";
 	$lang_sending_to = "Отправка для";
 	$lang_sending_successfull = "Письма успешно отправлены";
-	$lang_preview = "Preview";
-	$lang_saving_email = "Saving";
-	$lang_message_saved = "Message saved";
+	$lang_preview = "Предварительный просмотр";
+	$lang_saving_email = "Сохранение";
+	$lang_message_saved = "Сообщение сохранено";
 	$lang_help = "en_US_help.dat";
 	$lang_tinymce = "ru_RU";
 	
