@@ -20,3 +20,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 ?>
+</div>
+</center>
+<center>(c) 2016 Prishlyak Vadim<br>
+</center>
+</body></html>

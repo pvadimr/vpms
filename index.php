@@ -29,11 +29,7 @@ $cat=$_GET['cat'];
 $login=$_POST['login'];
 $type=$_POST['type'];
 $text=$_POST['text'];
-print "<!DOCTYPE html>";
-print "<html>\n";
-print "<head>\n";
-print "<meta charset=\"".$lang_encoding."\">\n";
-print '<title>'.$lang_title.'</title>';
+require_once('header.php');
 if (isset($_REQUEST['log_out']) or !isset($_SESSION['aa']))$_SESSION['aa']=0;
 if ($_SESSION['aa']==0){
 if ($hide!='' and $pass==$password_admin and $login==$login_admin){$_SESSION['aa']=1; $hide=null;}
@@ -48,13 +44,13 @@ $content='<form action="" method=post>
 }
 if ($_SESSION['aa']==1) {
 $content.='<br><form action="./?log_out" method=post>
-<a href="./?cat=recipients" id="bb_gray">'.$lang_btn_recipients.'</a>
-<a href="./?cat=write" id="bb_gray">'.$lang_btn_write.'</a>
+<a href="./?cat=recipients" id="bb_blue">'.$lang_btn_recipients.'</a>
+<a href="./?cat=write" id="bb_blue">'.$lang_btn_write.'</a>
 <a href="./?cat=pat" id="bb_blue">'.$lang_btn_pattern.'</a>
 <a href="./?cat=conf" id="bb_blue">'.$lang_btn_settings.'</a>
 <a href="./" id="bb_blue">'.$lang_btn_help.'</a>
 <input value="log_out" type="hidden" name="log_out"/>
-<input type=submit id="bb_gray" value="'.$lang_btn_logout.'" style="width:auto"/>
+<input type=submit id="bb_blue" value="'.$lang_btn_logout.'" style="width:auto"/>
 </form>
 <br><br>';
 
@@ -119,51 +115,8 @@ $content.= file_get_contents('./lang/'.$lang_help);
 }
 
 }
+
+echo $content;
+
+require_once('footer.php');
 ?>
-<link rel="stylesheet" href="./css.css" type="text/css" media="screen" />
-<script src="js/tinymce/tinymce.min.js"></script>
-<script>tinymce.init({
-  mode : "specific_textareas",  language: '<?php print $lang_tinymce?>', editor_selector:'text_edit',
-  theme: 'modern',
-  plugins: [
-    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-    'searchreplace wordcount visualblocks visualchars code fullscreen',
-    'insertdatetime media nonbreaking save table contextmenu directionality',
-    'template paste textcolor colorpicker textpattern imagetools'
-  ],
-  toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-  toolbar2: 'print preview media | forecolor backcolor emoticons code',
-  image_advtab: true,
-  templates: [
-    { title: 'Test template 1', content: 'Test 1' },
-    { title: 'Test template 2', content: 'Test 2' }
-  ],
-  content_css: [
-    '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
-    '//www.tinymce.com/css/codepen.min.css'
-  ]
- });
- </script>
- <script>
- function target_popup(form) {
-    window.open('', 'formpopup', 'width=750,height=400,resizeable,scrollbars');
-    form.target = 'formpopup';
-}
- </script>
- </head>
-<body><div id="message" style="display: none;"><h1></h1></div>
-<div id="message" class="load" style="display: none;"><img src="./loading.gif" /></div>
-<center>
-
-<h1><a style="text-decoration: none;" href="./"><img src="images/logo.jpg"></a></h1>
-
-<h2 style="margin-top:5px"></h2>
-<br/><br/>
-
-<div class="block">
-<?echo $content;?>
-</div>
-</center>
-<center>(c) 2016 Prishlyak Vadim<br>
-</b></center>
-</body></html>
