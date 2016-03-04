@@ -43,7 +43,12 @@
 	$lang_preview = "Preview";
 	$lang_saving_email = "Saving";
 	$lang_message_saved = "Message saved";
-	$lang_help = "en_US_help.dat";
+	$lang_help = "help/en_US_help.dat";
 	$lang_tinymce = "en_GB";
+	$lang_mail_from = "Send mail from";
+	$lang_mail_bcc = "Send hidden copy to";
+	$lang_lang = "Language";
+	$lang_subject = "Mail subject";
+	
 	
 ?>

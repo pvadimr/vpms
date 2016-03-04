@@ -43,7 +43,11 @@
 	$lang_preview = "Предварительный просмотр";
 	$lang_saving_email = "Сохранение";
 	$lang_message_saved = "Сообщение сохранено";
-	$lang_help = "en_US_help.dat";
+	$lang_help = "help/en_US_help.dat";
 	$lang_tinymce = "ru_RU";
+	$lang_mail_from = "Send mail from";
+	$lang_mail_bcc = "Send hidden copy to";
+	$lang_lang = "Language";
+	$lang_subject = "Mail subject";
 	
 ?>

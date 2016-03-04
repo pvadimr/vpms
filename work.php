@@ -22,6 +22,8 @@
 
 include('./settings.php');
 include('./lang/'.$lang);
+
+
 preg_match_all('/(.*?)\|(.*?)\|/s',file_get_contents('./hb.dat'), $recipients);
 $patterns = file_get_contents('./patterns.dat');
 $text=$_POST['mess'];

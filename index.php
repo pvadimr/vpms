@@ -83,8 +83,23 @@ $content.=$lang_write_message.'
 </form>';
 break;
 case "conf":
-$content.='
-<center><strong>Disabled for now</strong></center>';
+$lang_counter = 0;
+
+$content.="
+<form action=\"\" method=post>
+$lang_login <input type=text value=\"$login_admin\" name=\"admin\"><br>
+$lang_password <input type=password value=\"$login_password\" name=\"password\"><br>
+$lang_mail_from <input type=text value=\"$mail\" name=\"mail\"><br>
+$lang_mail_bcc <input type=text value=\"$hide_mail\" name=\"hidemail\"><br>
+$lang_lang <select>";
+foreach (glob("lang/*.php") as $filename) {
+	$filename = str_replace("lang/","",$filename);
+    $content.="<option value=\"$filename\">$filename</option>\n";
+}
+$content.="</select><br>
+$lang_subject <input type=text value=\"$set_subject\" name=\"subject\"><br>
+<input type=submit id=\"bb_gray\" value=\"$lang_btn_save\" style=\"width:auto\"/>
+</form>";
 break;
 case "recipients":
 if($hide!=''){
