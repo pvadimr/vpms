@@ -3,7 +3,7 @@
 	vpms: A simple newsletter system
 
     Copyright (C) 2016  Vadim Prishlyak
-	http://sw.pvadimr.ru
+	http://pvadimr.ru/sw/vpms/
 	pvadimr@outlook.com
 
     This program is free software: you can redistribute it and/or modify
@@ -19,4 +19,5 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
+if (!defined ('VPMS_access')) { Header ('Location: index.php'); exit; }
 ?>

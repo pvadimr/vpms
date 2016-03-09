@@ -23,6 +23,12 @@
 include('./settings.php');
 include('./lang/'.$lang);
 
+session_start(); 
+if($_SESSION['aa']==0) {
+	print "access error";
+	die();
+}
+
 
 preg_match_all('/(.*?)\|(.*?)\|/s',file_get_contents('./hb.dat'), $recipients);
 $patterns = file_get_contents('./patterns.dat');

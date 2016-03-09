@@ -1,4 +1,5 @@
 <?php
+if (!defined ('VPMS_access')) { Header ('Location: index.php'); exit; }
 $login_admin='admin';
 $password_admin='admin';
 $mail="me@example.com";
